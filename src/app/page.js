@@ -6,7 +6,8 @@ import {Container, TextField,
   Typography,
   Table, 
   TableBody, 
-  TableCell, TableHead, TableRow,Dialog, DialogTitle, DialogContent, Slide} from "@mui/material";
+  TableCell, 
+  TableHead, TableRow,Dialog, DialogTitle, DialogContent, Slide} from "@mui/material";
 
 export default function Home() {
   const [name, setName] = useState("");
