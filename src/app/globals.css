@@ -57,4 +57,99 @@ body {
   text-align: center;
   padding: 20px;
 }
+/* Gradient background like RSVP page */
+.admin-container {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #fddde6, #fbb1bd);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Card styling */
+.admin-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* Header */
+.header-card h1 {
+  color: #ff4081;
+  margin-bottom: 10px;
+}
+
+.header-card p {
+  color: #6d4c41;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  background: #ffe4ec;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h2 {
+  font-size: 18px;
+  color: #ff4081;
+}
+
+.stat-card p {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #d81b60;
+}
+
+/* Table */
+.table-card h2 {
+  margin-bottom: 20px;
+  color: #ff4081;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead {
+  background: #ff80ab;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background: #fff0f5;
+}
+
+tbody tr:hover {
+  background: #f8bbd0;
+}
 

@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from 'react';
-import { supabase } from '../../lib/supabaseClient';
-import { DataGrid } from '@mui/x-data-grid';
+import { useEffect, useState } from "react";
+import { supabase } from "../../lib/supabaseClient";
 
 export default function Admin() {
   const [rows, setRows] = useState([]);
+  const [stats, setStats] = useState({ total: 0, attendingYes: 0, attendingNo: 0 });
 
   useEffect(() => {
     fetchRSVP();
@@ -13,32 +13,65 @@ export default function Admin() {
 
   async function fetchRSVP() {
     const { data, error } = await supabase
-      .from('rsvps')
-      .select('*')
-      .order('created_at', { ascending: false });
+      .from("rsvps")
+      .select("*")
+      .order("created_at", { ascending: false });
 
-    if (!error) {
-      setRows(data.map((row, index) => ({
-        id: index + 1,
-        name: row.name,
-        email: row.email,
-        attending: row.attending ? 'Yes' : 'No',
-        created_at: new Date(row.created_at).toLocaleString()
-      })));
+    if (!error && data) {
+      setRows(data);
+
+      // calculate stats
+      const yes = data.filter((r) => r.attending).length;
+      const no = data.length - yes;
+      setStats({ total: data.length, attendingYes: yes, attendingNo: no });
     }
   }
 
-  const columns = [
-    { field: 'name', headerName: 'Name', flex: 1 },
-    { field: 'email', headerName: 'Email', flex: 1 },
-    { field: 'attending', headerName: 'Attending', flex: 1 },
-    { field: 'created_at', headerName: 'Submitted At', flex: 1 },
-  ];
-
   return (
-    <div style={{ height: 500, width: '80%', margin: 'auto', marginTop: '20px' }}>
-      <h1>RSVP Admin</h1>
-      <DataGrid rows={rows} columns={columns} pageSize={5} />
+    <div className="admin-container">
+      <div className="admin-card header-card">
+        <h1>✨ RSVP Dashboard</h1>
+        <p>Manage event responses in style 💖</p>
+      </div>
+
+      <div className="stats-grid">
+        <div className="stat-card">
+          <h2>Total RSVPs</h2>
+          <p>{stats.total}</p>
+        </div>
+        <div className="stat-card">
+          <h2>Attending 🎉</h2>
+          <p>{stats.attendingYes}</p>
+        </div>
+        <div className="stat-card">
+          <h2>Not Attending 😢</h2>
+          <p>{stats.attendingNo}</p>
+        </div>
+      </div>
+
+      <div className="admin-card table-card">
+        <h2>📋 RSVP Submissions</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Attending</th>
+              <th>Submitted At</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row, idx) => (
+              <tr key={idx}>
+                <td>{row.name}</td>
+                <td>{row.email}</td>
+                <td>{row.attending ? "Yes" : "No"}</td>
+                <td>{new Date(row.created_at).toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
