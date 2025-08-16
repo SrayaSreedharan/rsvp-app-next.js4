@@ -123,7 +123,6 @@ th, td {
 tbody tr:nth-child(even) {
   background: #fff0f5;
 }
-
 tbody tr:hover {
   background: #f8bbd0;
 }
