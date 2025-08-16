@@ -40,13 +40,11 @@ body {
 .table-container td {
   color: white;
 }
-
 .modal-title {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
 }
-
 .modal-content {
   text-align: center;
   padding: 20px;
