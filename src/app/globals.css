@@ -59,8 +59,6 @@ body {
   align-items: center;
   gap: 30px;
 }
-
-/* Card styling */
 .admin-card {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
