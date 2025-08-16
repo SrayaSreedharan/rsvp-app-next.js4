@@ -36,7 +36,6 @@ export default function Home() {
     return () => supabase.removeChannel(channel);
   }, []);
 
-  // Handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
