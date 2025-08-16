@@ -1,7 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
 import { supabase } from "../lib/supabaseClient";
-import {Container, TextField, Button, Typography,Table, TableBody, TableCell, TableHead, TableRow,Dialog, DialogTitle, DialogContent, Slide} from "@mui/material";
+import {
+  Container,
+  TextField,
+  Button,
+  Typography,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  Slide,
+} from "@mui/material";
 
 export default function Home() {
   const [name, setName] = useState("");
@@ -11,19 +20,18 @@ export default function Home() {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  // Fetch existing RSVPs
   const fetchRSVP = async () => {
     const { data, error } = await supabase
       .from("rsvps")
       .select("*")
       .order("id", { ascending: false });
 
-    if (error) {
-      console.error("Fetch error:", error);
-    } else {
-      setRsvps(data);
-    }
+    if (!error) setRsvps(data);
+    else console.error("Fetch error:", error);
   };
 
+  // Subscribe to inserts
   useEffect(() => {
     fetchRSVP();
 
@@ -39,6 +47,7 @@ export default function Home() {
     return () => supabase.removeChannel(channel);
   }, []);
 
+  // Handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -71,6 +80,7 @@ export default function Home() {
 
   return (
     <div className="bg">
+      {/* Form */}
       <Container maxWidth="sm" className="glass-card">
         <Typography variant="h4" align="center" gutterBottom className="title">
           ✨ Event RSVP
@@ -84,16 +94,7 @@ export default function Home() {
             margin="normal"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            sx={{
-                "& .MuiOutlinedInput-root": {
-                  "&.Mui-focused fieldset": {
-                    borderColor: "hotpink",
-                  },
-                },
-                "& label.Mui-focused": {
-                  color: "hotpink",
-                },
-              }}
+            className="pink-input"
           />
           <TextField
             label="Email"
@@ -108,16 +109,7 @@ export default function Home() {
                 ? "Please enter a valid email address"
                 : ""
             }
-            sx={{
-                "& .MuiOutlinedInput-root": {
-                  "&.Mui-focused fieldset": {
-                    borderColor: "hotpink",
-                  },
-                },
-                "& label.Mui-focused": {
-                  color: "hotpink",
-                },
-              }}
+            className="pink-input"
           />
           <Button
             type="submit"
@@ -131,36 +123,24 @@ export default function Home() {
         </form>
       </Container>
 
-      <Container maxWidth="sm" className="glass-card table-container">
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell><b>Name</b></TableCell>
-              <TableCell><b>Email</b></TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rsvps.map((r) => (
-              <TableRow key={r.id} className="table-row">
-                <TableCell>{r.name}</TableCell>
-                <TableCell>{r.email}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </Container>
+     
 
-      <Dialog
-        open={openModal}
-        onClose={() => setOpenModal(false)}
-        TransitionComponent={Slide}
-        TransitionProps={{ direction: "up" }}
-      >
-        <DialogTitle className="modal-title">🎉 Thank You!</DialogTitle>
-        <DialogContent className="modal-content">
-          <Typography>We’ve received your RSVP. Can’t wait to see you!</Typography>
-        </DialogContent>
-      </Dialog>
+      {/* Thank You Modal (hydration-safe) */}
+      {typeof window !== "undefined" && (
+        <Dialog
+          open={openModal}
+          onClose={() => setOpenModal(false)}
+          TransitionComponent={Slide}
+          TransitionProps={{ direction: "up" }}
+        >
+          <DialogTitle className="modal-title">🎉 Thank You!</DialogTitle>
+          <DialogContent className="modal-content">
+            <Typography>
+              We’ve received your RSVP. Can’t wait to see you!
+            </Typography>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 }
