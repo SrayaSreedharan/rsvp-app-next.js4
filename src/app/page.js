@@ -95,9 +95,6 @@ export default function Home() {
           </Button>
         </form>
       </Container>
-
-     
-
       
       {typeof window !== "undefined" && (
         <Dialog
