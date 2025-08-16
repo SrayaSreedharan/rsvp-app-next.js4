@@ -11,7 +11,6 @@ export default function Home() {
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // Fetch existing RSVPs
   const fetchRSVP = async () => {
     const { data, error } = await supabase
       .from("rsvps")
