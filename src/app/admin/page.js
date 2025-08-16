@@ -42,7 +42,7 @@ export default function Admin() {
           <p>{stats.attendingYes}</p>
         </div>
         <div className="stat-card">
-          <h2>Not Attending 😢</h2>
+          <h2>Not Attending </h2>
           <p>{stats.attendingNo}</p>
         </div>
       </div>
