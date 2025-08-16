@@ -21,7 +21,6 @@ export default function Home() {
     else console.error("Fetch error:", error);
   };
 
-  // Subscribe to inserts
   useEffect(() => {
     fetchRSVP();
 
