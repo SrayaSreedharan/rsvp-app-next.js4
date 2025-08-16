@@ -93,9 +93,7 @@ export default function Home() {
           <Button
             type="submit"
             fullWidth
-            variant="contained"
-            className="submit-btn"
-            disabled={!name || !emailRegex.test(email)}>
+            variant="contained" className="submit-btn" disabled={!name || !emailRegex.test(email)}>
             Submit RSVP
           </Button>
         </form>
