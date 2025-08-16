@@ -10,7 +10,6 @@ export default function Home() {
   const [openModal, setOpenModal] = useState(false);
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   const fetchRSVP = async () => {
     const { data, error } = await supabase
       .from("rsvps")
@@ -95,7 +94,7 @@ export default function Home() {
           </Button>
         </form>
       </Container>
-      
+
       {typeof window !== "undefined" && (
         <Dialog
           open={openModal}
