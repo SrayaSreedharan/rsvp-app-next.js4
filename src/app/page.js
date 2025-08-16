@@ -98,7 +98,7 @@ export default function Home() {
 
      
 
-      {/* Thank You Modal (hydration-safe) */}
+      
       {typeof window !== "undefined" && (
         <Dialog
           open={openModal}
