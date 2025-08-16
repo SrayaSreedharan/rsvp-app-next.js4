@@ -29,16 +29,13 @@ body {
   border-radius: 8px;
   transition: all 0.3s ease;
 }
-
 .submit-btn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(255, 105, 180, 0.5);
 }
-
 .table-container table {
   background: rgba(255, 255, 255, 0.1);
 }
-
 .table-container th,
 .table-container td {
   color: white;
