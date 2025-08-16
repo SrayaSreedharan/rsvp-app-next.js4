@@ -74,15 +74,7 @@ export default function Home() {
         </Typography>
 
         <form onSubmit={handleSubmit}>
-          <TextField
-            label="Name"
-            variant="outlined"
-            fullWidth
-            margin="normal"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="pink-input"
-          />
+          <TextField label="Name" variant="outlined" fullWidth margin="normal" value={name} onChange={(e) => setName(e.target.value)} className="pink-input"/>
           <TextField
             label="Email"
             variant="outlined"
