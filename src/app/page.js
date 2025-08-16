@@ -90,10 +90,7 @@ export default function Home() {
             }
             className="pink-input"
           />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained" className="submit-btn" disabled={!name || !emailRegex.test(email)}>
+          <Button type="submit" fullWidth  variant="contained" className="submit-btn" disabled={!name || !emailRegex.test(email)}>
             Submit RSVP
           </Button>
         </form>
