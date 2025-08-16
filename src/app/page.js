@@ -68,7 +68,6 @@ export default function Home() {
 
   return (
     <div className="bg">
-      {/* Form */}
       <Container maxWidth="sm" className="glass-card">
         <Typography variant="h4" align="center" gutterBottom className="title">
           ✨ Event RSVP
