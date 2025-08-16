@@ -19,7 +19,7 @@ export default function Admin() {
     if (!error && data) {
       setRows(data);
 
-      // calculate stats
+      
       const yes = data.filter((r) => r.attending).length;
       const no = data.length - yes;
       setStats({ total: data.length, attendingYes: yes, attendingNo: no });
