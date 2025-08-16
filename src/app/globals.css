@@ -80,18 +80,13 @@ body {
   max-width: 1000px;
   text-align: center;
 }
-
-/* Header */
 .header-card h1 {
   color: #ff4081;
   margin-bottom: 10px;
 }
-
 .header-card p {
   color: #6d4c41;
 }
-
-/* Stats Grid */
 .stats-grid {
   display: flex;
   justify-content: center;
