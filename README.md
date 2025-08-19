@@ -30,12 +30,13 @@ Users can RSVP for an event by submitting their name and email. Submissions are 
 
  ## **Setup & Installation**
 **1. Clone the repo**
+
 git clone https://github.com/your-username/event-rsvp.git
 cd event-rsvp
 
 **2. Install dependencies**
-npm install
 
+npm install
 
 **3. Configure Supabase**
 
@@ -46,7 +47,7 @@ Set up your Supabase client in /lib/supabaseClient.js:
 Add the environment variables in .env.local:
 
 **4. Run the dev server**
-npm run dev
 
+npm run dev
 
 Now visit 👉 http://localhost:3000
