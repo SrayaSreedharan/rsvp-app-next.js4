@@ -17,15 +17,15 @@ Users can RSVP for an event by submitting their name and email. Submissions are 
 
 ## **Tech Stack**
 
-Next.js 13+ (App Router)
+**Next.js 13+ (App Router)**
 
-Supabase
+**Supabase**
  – database & realtime updates
 
-Material-UI
+**Material-UI**
  – UI components
 
-React Hooks
+**React Hooks**
  – state management (useState, useEffect)
 
  ## **Setup & Installation**
@@ -35,8 +35,7 @@ cd event-rsvp
 
 2. Install dependencies
 npm install
-# or
-yarn install
+
 
 3. Configure Supabase
 
