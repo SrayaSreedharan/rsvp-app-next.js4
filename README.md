@@ -1,4 +1,4 @@
-✨ Event RSVP App
+✨ **Event RSVP App**
 
 A simple RSVP application built with Next.js, Supabase, and Material-UI (MUI).
 Users can RSVP for an event by submitting their name and email. Submissions are stored in Supabase and updated in real-time.
