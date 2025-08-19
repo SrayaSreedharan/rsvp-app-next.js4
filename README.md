@@ -5,15 +5,15 @@ Users can RSVP for an event by submitting their name and email. Submissions are 
 
 ## **Features**
 
-📩 RSVP form with name + email validation
+ **1** :RSVP form with name + email validation
 
-✅ Email format validation using Regex
+ **2** :Email format validation using Regex
 
-⚡ Real-time updates via Supabase Realtime
+ **3** :Real-time updates via Supabase Realtime
 
-🎉 Thank-you modal after successful RSVP submission
+ **4** :Thank-you modal after successful RSVP submission
 
-💅 Styled with Material-UI and custom CSS (glassmorphism + pink theme)
+**5** :Styled with Material-UI and custom CSS (glassmorphism + pink theme)
 
 ## **Tech Stack**
 
