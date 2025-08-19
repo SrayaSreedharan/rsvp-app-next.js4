@@ -3,7 +3,7 @@
 A simple RSVP application built with Next.js, Supabase, and Material-UI (MUI).
 Users can RSVP for an event by submitting their name and email. Submissions are stored in Supabase and updated in real-time.
 
-🚀 Features
+## **Features**
 
 📩 RSVP form with name + email validation
 
@@ -15,7 +15,7 @@ Users can RSVP for an event by submitting their name and email. Submissions are 
 
 💅 Styled with Material-UI and custom CSS (glassmorphism + pink theme)
 
-🛠️ Tech Stack
+## **Tech Stack**
 
 Next.js 13+ (App Router)
 
@@ -28,7 +28,7 @@ Material-UI
 React Hooks
  – state management (useState, useEffect)
 
- ⚙️ Setup & Installation
+ ## **Setup & Installation**
 1. Clone the repo
 git clone https://github.com/your-username/event-rsvp.git
 cd event-rsvp
